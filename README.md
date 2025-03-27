@@ -12,4 +12,5 @@
   - Folder "addonname"
   - in addonname/blender_manifest.toml
   - in dev.py rename the variables
+  - in .gitignore
   - in the tests, use your addonid to access your add-on as a python module
