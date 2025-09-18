@@ -6,6 +6,18 @@ on:
     branches: ["**"]
 
 jobs:
+  cache-blender:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Restore Blender installation cache
+        id: blender-cache
+        uses: actions/cache@v4
+        with:
+          path: ./blender
+          key: ${{ runner.os }}-blender-${{ hashFiles('./dev.py') }}
+          restore-keys: |
+            ${{ runner.os }}-blender-${{ hashFiles('./dev.py') }}
   test:
     runs-on: ubuntu-latest
     steps:
