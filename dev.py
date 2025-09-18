@@ -131,7 +131,7 @@ def test():
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "command",
-    choices=["build", "test", "release"],
+    choices=["build", "test"],
     help="""
   TEST = build with test files and run tests
   BUILD = Create the zip

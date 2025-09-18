@@ -1,16 +1,40 @@
-# Template Repository to create a new blank Blender Add-on/Extension
-## Structure
-- Folder "addonname" contains the addon itself, all other files in the top repository are only for development purposes
-  - dev.py: Contains management functions for running the tests and building the application
-  - run_tests.py: Will be executed from within Blender to run all tests with pytest
-  - tests/: Contains the tests
-  - development_requirements.txt: Contains all python packages that should be installed in the local python virtual environment
-  - blender/: contains blender executables responsible for building and testing the add-on, automatically managed by dev.py
-  - .github/: Contains github action configurations to automatically test the add-on on push
-## Setup
-- Rename all occurrences of "AddonName" and "addonid" to the name and id of your add-on
-  - Folder "AddonName"
-  - in AddonName/blender_manifest.toml
-  - in dev.py rename the variables
-  - in .gitignore
-  - in the tests, use your addonid to access your add-on as a python module
+# Blender Add-on Template
+
+A modern template repository for creating Blender add-ons/extensions with automated testing and development tools.
+
+## Project Structure
+
+```
+├── AddonName/                    # Main add-on directory
+├── dev.py                        # Development management script
+├── run_tests.py                  # Test runner for Blender
+├── tests/                        # Test files
+├── development_requirements.txt   # Python dependencies
+├── blender/                      # Blender executables (auto-managed)
+└── .github/                      # CI/CD workflows
+```
+
+The `AddonName` folder contains your actual add-on - all other files are development tools.
+
+## Quick Setup
+
+1. **Rename the `AddonName` and `addonid`  to your own name:**
+   - Folder: `AddonName`
+   - Update the variables in `AddonName/blender_manifest.toml`
+   - Update the variables in `dev.py`
+   - Update the `AddonName.zip` line in `.gitignore`
+   - Update test imports to use your addon ID
+
+
+2. **`dev.py` command line options**
+   - ```bash python dev.py test``` runs all tests in the ./tests folder
+   - ```bash python dev.py build``` build the add-on to a zip
+
+## Features
+
+- **Automated Testing** - Run tests within Blender using pytest
+- **CI/CD Ready** - GitHub Actions for automatic testing
+- **Build Management** - Automated Blender executable management
+- **Development Tools** - Integrated development workflow
+
+---
