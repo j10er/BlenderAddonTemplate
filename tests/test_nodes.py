@@ -1,7 +1,7 @@
 import bpy
 import pytest
 from bl_ext.user_default.addonid import assets
-from .fixtures import import_assets_and_tests
+from .fixtures import import_assets_and_nodes
 
 
 def get_test_groups_names():
@@ -56,7 +56,7 @@ def evaluate_node_group(group_name: str):
 @pytest.mark.parametrize("group_name", get_test_groups_names())
 def test_node_group(
     group_name,
-    import_assets_and_tests,
+    import_assets_and_nodes,
 ):
     results = evaluate_node_group(group_name)
     print(f"Testing {group_name} with {len(results)} errors")
