@@ -96,9 +96,7 @@ def _install_test_deps(blender_path, version):
     major_version = version[:3]
     python_dir = f"{blender_path}/blender-{version}/{major_version}/python/bin/"
     python_executable = f"{python_dir}/{next(name for name in os.listdir(python_dir) if name.startswith('python3.'))}"
-    subprocess.run(
-        [python_executable, "-m", "pip", "install", "pytest", "deepdiff", "-q", "-q"]
-    )
+    subprocess.run([python_executable, "-m", "pip", "install", "pytest", "-q", "-q"])
 
 
 def _update_mock_module() -> None:
@@ -118,7 +116,7 @@ def _update_mock_module() -> None:
 
 
 def test():
-    blender_versions = ["4.4.5", "4.5.2"]
+    blender_versions = ["4.4.0", "4.5.3"]
     blender_path = "./blender"
     for version in blender_versions:
 

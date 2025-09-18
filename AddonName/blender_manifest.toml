@@ -2,9 +2,9 @@ schema_version = "1.0.0"
 
 # Example of manifest file for a Blender extension
 # Change the values according to your extension
-id = "addonname"
+id = "addonid"
 version = "1.0.0"
-name = "addonname"
+name = "AddonName"
 tagline = "Short description of the add-on"
 maintainer = "People"
 # Supported types: "add-on", "theme"
