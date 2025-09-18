@@ -1,8 +1,8 @@
 import bpy
 import pytest
-from bl_ext.user_default import addonname
+from bl_ext.user_default import addonid
 
 
 def test_example():
-    addonname.assets.import_assets()
+    addonid.assets.import_assets()
     assert True

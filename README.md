@@ -8,9 +8,9 @@
   - blender/: contains blender executables responsible for building and testing the add-on, automatically managed by dev.py
   - .github/: Contains github action configurations to automatically test the add-on on push
 ## Setup
-- Rename all occurrences of "addonname" and "addonid" to the name and id of your add-on
-  - Folder "addonname"
-  - in addonname/blender_manifest.toml
+- Rename all occurrences of "AddonName" and "addonid" to the name and id of your add-on
+  - Folder "AddonName"
+  - in AddonName/blender_manifest.toml
   - in dev.py rename the variables
   - in .gitignore
   - in the tests, use your addonid to access your add-on as a python module
