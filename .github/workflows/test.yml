@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Restore Blender installation cache
+      - name: Store/Restore Blender installation cache
         id: blender-cache
         uses: actions/cache@v4
         with:
