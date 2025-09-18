@@ -6,10 +6,9 @@ on:
     branches: ["**"]
 
 jobs:
-  cache-blender:
+  test:
     runs-on: ubuntu-latest
     steps:
-
       - name: Store/Restore Blender installation cache
         id: blender-cache
         uses: actions/cache@v4
@@ -18,9 +17,6 @@ jobs:
           key: ${{ runner.os }}-blender-${{ hashFiles('./dev.py') }}
           restore-keys: |
             ${{ runner.os }}-blender-${{ hashFiles('./dev.py') }}
-  test:
-    runs-on: ubuntu-latest
-    steps:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Setup Python
